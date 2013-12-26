@@ -17,3 +17,14 @@ TODO
 1. solve cube and display steps to achieve results
 1. buttons to step through results with visual highlights
 1. update the colored blocks to keep up with steps taken to solve
+
+NOTES
+-----
+
+Currently I am able to take photos using HTML5 and display each 'side' of the 
+cube. Next step is to find the cube in an image and extract the current state 
+of the rubiks cube. I am having difficulty with that as there aren't many good
+algorithms available in JavaScript. I am implementing my own Hough Transform in 
+the hopes that that can be used to find the rectangles of the rubiks cube. 
+
+I am bored and will revisit later...
