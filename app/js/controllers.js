@@ -37,12 +37,16 @@ angular.module('myApp.controllers', []).
         // You could do something manually with the stream.
     };
 
+    $scope.retakeDisabled = true;
+    $scope.analyzeDisabled = true;
+
     /**
      * Make a snapshot of the camera data and show it in another canvas.
      */
-    $scope.makeSnapshot = function makeSnapshot() {
+    $scope.makeSnapshot = function makeSnapshot(nextPhoto) {
         if (_video) {
-            var patCanvas = document.querySelector('#snapshot');
+            var boxName = getBoxName(nextPhoto);
+            var patCanvas = document.querySelector(boxName);
             if (!patCanvas) return;
 
             patCanvas.width = _video.width;
@@ -54,6 +58,22 @@ angular.module('myApp.controllers', []).
 
             patData = idata;
         }
+    };
+
+    var currentBox = 0;
+    var boxes = new Array("#top_rubik", "#back_rubik", "#left_rubik", "#front_rubik", "#right_rubik", "#bottom_rubik");
+
+    var getBoxName = function getBoxName(nextPhoto) {
+        var box = boxes[currentBox];
+        if (nextPhoto) {
+            currentBox = currentBox + 1;
+        }
+        if (currentBox > 5) {
+            currentBox = 5;
+            $scope.analyzeDisabled = false;
+        }
+        $scope.retakeDisabled = false;
+        return box;
     };
 
     var getVideoData = function getVideoData(x, y, w, h) {

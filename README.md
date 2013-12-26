@@ -6,8 +6,7 @@ rubik cube solver
 TODO
 ----
 
-1. add buttons to take screen shots
-1. display screen shot after taken
+1. next steps should be able to be done w/o full webpage
 1. transform screenshots to grid to represent rubiks cube
 1. use CV stuff to turn screenshots into properly scaled rubiks cube face
 1. errors to announce cant find rubiks cube face
