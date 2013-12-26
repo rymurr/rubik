@@ -1,1 +1,5 @@
-<p>This is the partial for view 1.</p>
+<webcam on-stream="onSuccess(video)"
+        on-access-denied="onError(err)"
+        on-streaming="onSuccess(video)"></webcam>
+<button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button>
+<canvas id="snapshot"></canvas>
