@@ -1,5 +1,34 @@
-<webcam on-stream="onSuccess(video)"
-        on-access-denied="onError(err)"
-        on-streaming="onSuccess(video)"></webcam>
-<button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button>
-<canvas id="snapshot"></canvas>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <webcam on-stream="onSuccess(video)"
+            on-access-denied="onError(err)"
+            on-streaming="onSuccess(video)">
+        </webcam>
+    </div>        
+    <div class="col-md-3">
+        <button class="btn btn-large btn-primary" ng-click="makeSnapshot(true)">Take next picture</button>
+        <button class="btn btn-large btn-primary" ng-click="makeSnapshot(false)" ng-disabled="retakeDisabled">Retake current picture</button>    
+        <button class="btn btn-large btn-primary" ng-click="makeAnalysis()" ng-disabled="analyzeDisabled">Analyze</button>    
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"><canvas id="top_rubik" class="well"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row">
+    <div class="col-md-3"><canvas id="back_rubik"></div>
+    <div class="col-md-3"><canvas id="left_rubik"></div>
+    <div class="col-md-3"><canvas id="front_rubik"></div>
+    <div class="col-md-3"><canvas id="right_rubik"></div>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"><canvas id="bottom_rubik"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+</div>
+
